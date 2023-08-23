@@ -1,8 +1,14 @@
+/*
+	* pelos - convert Latin text into Linear B
+	* licensed under GPL-3.0
+*/
+
 #include <stdio.h>
+#include "linear_b.h"
 
 int main() {
 	int c, i; /* our input variable */
-	char syllable[4];
+	char syllable[SYLLABLE_SIZE];
 
 	i = 0;
 
@@ -12,20 +18,20 @@ int main() {
 		/* alwyas use lowercase */
 
 		if (c >= 'A' && c <= 'Z') {
-			c = c + ' ';
+			c += ' ';
 			goto alpha;
 		}
 
 		/* either add the character to the syllable array
-		   or move to the next one (enforcing the syllables
+		   or move to the next one (enforcing that the syllables
 		   may only be 3 characters wide) */
 
-		if (c >= 'a' && c <= 'z' && i < 3) {
+		if (c >= 'a' && c <= 'z' && i < SYLLABLE_SIZE-1) {
 			alpha:
 			syllable[i] = c;
 		} else {
 			syllable[i] = '\0';
-			printf("%s", syllable);
+			printf("%s", lb_convert(syllable));
 
 			i = -1;
 

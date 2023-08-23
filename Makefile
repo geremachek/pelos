@@ -1,5 +1,10 @@
+TARGET = pelos
+
 pelos:
-	gcc -ansi main.c -o pelos
+	gcc -ansi main.c linear_b.c -o $(TARGET)
+
+clean:
+	$(RM) $(TARGET)
 
 test:
-	./pelos < test.txt
+	./$(TARGET) < test.txt

@@ -1,0 +1,19 @@
+#!/bin/sh
+# pelosw - wrapper for pelos
+
+PELOS="./pelos"
+
+case "$1" in
+	"-h")
+		printf "Usage: %s [-hf]\n" "$(basename "$0")"
+		;;
+	"-f")
+		$PELOS < "$2"
+		;;
+	*)
+		if [ "$#" -gt 0 ]; then
+			printf "$@\n" | $PELOS
+		else
+			$PELOS
+		fi
+esac
