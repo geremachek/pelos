@@ -7,41 +7,42 @@
 #include "linear_b.h"
 
 int main() {
-	int c, i; /* our input variable */
+	int c, i, alpha; /* our input variable */
 	char syllable[SYLLABLE_SIZE];
 
-	i = 0;
+	i, alpha = 0, 0;
 
 	/* input loop */
 
 	do {
-		/* alwyas use lowercase */
+		c = getchar();
+
+		/* always use lowercase */
 
 		if (c >= 'A' && c <= 'Z') {
 			c += ' ';
-			goto alpha;
-		}
+			alpha = 1; /* our character is alphabetic */
+		} else
+			alpha = (c >= 'a' && c <= 'z'); /* it still might be... let's check! */
 
 		/* either add the character to the syllable array
 		   or move to the next one (enforcing that the syllables
 		   may only be 3 characters wide) */
 
-		if (c >= 'a' && c <= 'z' && i < SYLLABLE_SIZE-1) {
-			alpha:
+		if (alpha && i < SYLLABLE_SIZE-1) {
 			syllable[i] = c;
+			++i;
 		} else {
 			syllable[i] = '\0';
 			printf("%s", lb_convert(syllable));
 
-			i = -1;
+			i = 0;
 
 			if (c != '-')
 				putchar(c);
 		}
 
-		++i;
-
-	} while ((c = getchar()) != EOF); /* listen for input until EOF */
+	} while (c != EOF); /* listen for input until EOF */
 
 	return 0;
 }
