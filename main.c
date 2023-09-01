@@ -11,7 +11,7 @@ int main() {
 	int c, i, alpha; /* our input variable */
 	char syllable[SYLLABLE_SIZE];
 
-	i = 0
+	i = 0;
 
 	/* input loop */
 
