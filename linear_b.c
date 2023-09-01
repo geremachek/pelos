@@ -3,9 +3,11 @@
 #include <string.h>
 #include "linear_b.h"
 
+#define TOTAL_SIGNS 73
+
 /* our dictionary of sign pairs */
 
-static SignPair signList[] = {
+static SignPair signList[TOTAL_SIGNS] = {
 	{ "a",   LB_A },
 	{ "ai",  LB_AI },
 	{ "au",  LB_AU },
@@ -87,10 +89,7 @@ char* lb_convert(char latin[SYLLABLE_SIZE]) {
 	int low, mid, high, cmp;
 
 	low = 0;
-
-	/* calculate the size of the sign list */
-
-	high = (sizeof(signList) / sizeof(SignPair)) - 1;
+	high = TOTAL_SIGNS;
 
 	/* do a binary search within the table */
 

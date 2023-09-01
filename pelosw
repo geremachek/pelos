@@ -12,7 +12,7 @@ case "$1" in
 		;;
 	*)
 		if [ "$#" -gt 0 ]; then
-			printf "$@\n" | $PELOS
+			printf "%s\n" "$@" | $PELOS
 		else
 			$PELOS
 		fi
