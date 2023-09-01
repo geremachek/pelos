@@ -4,13 +4,14 @@
 */
 
 #include <stdio.h>
+#include <unistd.h>
 #include "linear_b.h"
 
 int main() {
 	int c, i, alpha; /* our input variable */
 	char syllable[SYLLABLE_SIZE];
 
-	i, alpha = 0, 0;
+	i = 0
 
 	/* input loop */
 
