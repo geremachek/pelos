@@ -1,5 +1,5 @@
 /*
-	* pelos - convert Latin text into the Agean scripts.
+	* pelos - convert Latin text into the Aegean scripts.
 	* licensed under GPL-3.0
 */
 

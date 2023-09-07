@@ -1,4 +1,4 @@
-/* interface for parsing Agean syllabaries */
+/* interface for parsing Aegean syllabaries */
 
 /* sign pair type */
 
