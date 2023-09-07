@@ -1,6 +1,6 @@
 # 📜 pelos
 
-Pelos is a text filter which converts the typical hyphenated transliterations of the Agean scripts into their actual Unicode representations.
+Pelos is a text filter which converts the typical hyphenated transliterations of the Aegean scripts into their actual Unicode representations.
 
 Passing arguments to the parser over the command-line can be achieved through the `peloslw` and `peloscw` wrappers included in this repository.
 

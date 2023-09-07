@@ -8,7 +8,7 @@
 #include <string.h>
 #include "signs.h"
 
-void input_loop(char* (*parser)(char[SYLLABLE_SIZE]));
+void input_loop(const char* (*parser)(char[SYLLABLE_SIZE]));
 int return_error(char* message, char* name);
 
 int main(int argc, char* argv[]) {
@@ -37,7 +37,7 @@ int main(int argc, char* argv[]) {
 
 /* parse stdin */
 
-void input_loop(char* (*parser)(char[SYLLABLE_SIZE])) {
+void input_loop(const char* (*parser)(char[SYLLABLE_SIZE])) {
 	int c, i, alpha; /* our input variable */
 	char syllable[SYLLABLE_SIZE];
 

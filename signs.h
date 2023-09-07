@@ -13,12 +13,12 @@ typedef struct {
 	char sign[SIGN_SIZE];
 } SignPair;
 
-static SignPair lb_signs[LB_TOTAL_SIGNS];
-static SignPair cy_signs[CY_TOTAL_SIGNS];
+static const SignPair lb_signs[LB_TOTAL_SIGNS];
+static const SignPair cy_signs[CY_TOTAL_SIGNS];
 
 /* our conversion function */
 
-char* sign_convert(char latin[SYLLABLE_SIZE], SignPair signs[], size_t total);
+const char* sign_convert(char latin[SYLLABLE_SIZE], const SignPair signs[], size_t total);
 
-char* lb_convert(char latin[SYLLABLE_SIZE]);
-char* cy_convert(char latin[SYLLABLE_SIZE]);
+const char* lb_convert(char latin[SYLLABLE_SIZE]);
+const char* cy_convert(char latin[SYLLABLE_SIZE]);

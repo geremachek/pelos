@@ -9,7 +9,7 @@
 #define LB_BLOCK "\xf0\x90\x80"
 #define LB_BLOCK_SPEC "\xf0\x90\x81"
 
-static SignPair lb_signs[LB_TOTAL_SIGNS] = {
+static const SignPair lb_signs[LB_TOTAL_SIGNS] = {
 	{ "a",   LB_BLOCK"\x80" },
 	{ "ai",  LB_BLOCK_SPEC"\x81" },
 	{ "au",  LB_BLOCK_SPEC"\x82" },
@@ -89,7 +89,7 @@ static SignPair lb_signs[LB_TOTAL_SIGNS] = {
 
 #define CY_BLOCK "\xf0\x90\xa0"
 
-static SignPair cy_signs[CY_TOTAL_SIGNS] = {
+static const SignPair cy_signs[CY_TOTAL_SIGNS] = {
 	{ "a",  CY_BLOCK"\x80" },
 	{ "e",  CY_BLOCK"\x81" },
 	{ "i",  CY_BLOCK"\x82" },
@@ -147,9 +147,9 @@ static SignPair cy_signs[CY_TOTAL_SIGNS] = {
 	{ "zo", CY_BLOCK"\xbf" },
 };
 
-/* convert from latin to Linear B */
+/* convert from latin to Aegean script */
 
-char* sign_convert(char latin[SYLLABLE_SIZE], SignPair signs[], size_t total) {
+const char* sign_convert(char latin[SYLLABLE_SIZE], const SignPair signs[], size_t total) {
 	int low, mid, high, cmp;
 
 	low = 0;
@@ -174,10 +174,10 @@ char* sign_convert(char latin[SYLLABLE_SIZE], SignPair signs[], size_t total) {
 	return latin;
 }
 
-char* lb_convert(char latin[SYLLABLE_SIZE]) {
+const char* lb_convert(char latin[SYLLABLE_SIZE]) {
 	return sign_convert(latin, lb_signs, LB_TOTAL_SIGNS);
 }
 
-char* cy_convert(char latin[SYLLABLE_SIZE]) {
+const char* cy_convert(char latin[SYLLABLE_SIZE]) {
 	return sign_convert(latin, cy_signs, CY_TOTAL_SIGNS);
 }
