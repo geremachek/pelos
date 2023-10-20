@@ -4,7 +4,7 @@ pelos:
 	gcc -Wall -ansi main.c signs.c -o $(TARGET)
 
 debug:
-	gcc -ansi -g -fsanitize=address main.c linear_b.c -o $(TARGET)
+	gcc -ansi -g -fsanitize=address main.c signs.c -o $(TARGET)
 
 clean:
 	$(RM) $(TARGET)

@@ -4,7 +4,7 @@ Pelos is a text filter which converts the typical hyphenated transliterations of
 
 Passing arguments to the parser over the command-line can be achieved through the `peloslw` and `peloscw` wrappers included in this repository.
 
-**Usage:**
+## Usage
 
 ```
 Usage: pelos [-hlc]
@@ -13,10 +13,10 @@ Usage: pelos [-hlc]
 	-c	Parse Cypriot Syllabary transliterations
 ```
 
-**Installation:**
+## Installation
 
 Compile it with `make` and put the binary wherever.
 
-**Future:**
+## Future
 
 The long-term trajectory for this project is to add support for Linear A (in some form) and for ideographic signs.
